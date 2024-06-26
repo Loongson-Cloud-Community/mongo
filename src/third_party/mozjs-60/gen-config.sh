@@ -40,6 +40,9 @@ case "$_Path" in
     "platform/s390x/linux")
         _CONFIG_OPTS="--host=s390x-linux"
 	;;
+    "platform/loongarch64/linux")
+        _CONFIG_OPTS="--host=loongarch64-linux"
+	;;
     "platform/x86_64/freebsd")
         _CONFIG_OPTS="--host=x86_64-freebsd"
 	;;

@@ -49,6 +49,10 @@
 #  define GNUC_COMPATIBLE
 #endif
 
+#ifdef __loongarch64
+#  define GNUC_COMPATIBLE
+#endif
+
 #ifdef __sparc__
 #  define GNUC_COMPATIBLE
 #  ifdef  __LP64__

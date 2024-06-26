@@ -135,7 +135,8 @@
       defined(_MIPSEL) || defined(__ARMEL__) || \
       defined(__alpha__) || defined(__AARCH64EL__) || \
       (defined(__sh__) && defined(__BIG_ENDIAN__)) || \
-      (defined(__ia64) && !defined(__BIG_ENDIAN__))
+      (defined(__ia64) && !defined(__BIG_ENDIAN__)) || \
+      defined*(__loongarch64)
 #  define MOZ_LITTLE_ENDIAN 1
 #endif
 

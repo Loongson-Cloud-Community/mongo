@@ -70,6 +70,8 @@
 #  define GETRANDOM_NR 359
 # elif defined(__s390__)
 #  define GETRANDOM_NR 349
+# elif defined(__loongarch64)
+#  define GETRANDOM_NR 278
 # elif defined(__mips__)
 #  include <sgidefs.h>
 #  if _MIPS_SIM == _MIPS_SIM_ABI32
