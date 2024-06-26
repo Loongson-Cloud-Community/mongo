@@ -16,6 +16,7 @@ config_choice(
     OPTIONS
         "x86;WT_X86;"
         "aarch64;WT_AARCH64;"
+	"loongarch64;WT_LOONGARCH64;"
         "ppc64le;WT_PPC64;"
         "s390x;WT_S390X;"
 )

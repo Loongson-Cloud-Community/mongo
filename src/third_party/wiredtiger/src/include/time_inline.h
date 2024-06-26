@@ -36,6 +36,12 @@ __wt_rdtsc(void)
         __asm__ volatile("mrs %0,  cntvct_el0" : "=r"(t));
         return (t);
     }
+#elif defined(__loongarch64)
+    {
+  	uint64_t result;
+  	__asm__ volatile ("rdtime.d %0,$r0" : "=r" (result));
+  	return (result);
+    }
 #else
     return (0);
 #endif

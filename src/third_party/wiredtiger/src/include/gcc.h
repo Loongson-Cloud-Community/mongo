@@ -280,6 +280,21 @@ WT_ATOMIC_FUNC(size, size_t, size_t *vp, size_t v)
         __asm__ volatile("" ::: "memory"); \
     } while (0)
 
+#elif defined(__loongarch64)
+#define WT_PAUSE() __asm__ volatile("nop" ::: "memory")
+#define WT_FULL_BARRIER()                         \
+    do {                                          \
+        __asm__ volatile("dbar 0" ::: "memory");  \
+    } while (0)
+#define WT_READ_BARRIER()                           \
+    do {                                            \
+        __asm__ volatile("dbar 0" ::: "memory");    \
+    } while (0)
+#define WT_WRITE_BARRIER()                          \
+    do {                                            \
+        __asm__ volatile("dbar 0" ::: "memory");    \
+    } while (0)
+
 #else
 #error "No write barrier implementation for this hardware"
 #endif
