@@ -26,7 +26,7 @@ VERSION=2.7
 REVISION=$VERSION-mongodb
 MACOSX_VERSION_MIN=10.12
 
-DEST_DIR=$(git rev-parse --show-toplevel)/src/third_party/$NAME-$VERSION
+DEST_DIR=$(git rev-parse --show-toplevel)/src/third_party/$NAME
 
 UNAME=$(uname | tr A-Z a-z)
 UNAME_PROCESSOR=$(uname -m)
@@ -48,6 +48,12 @@ WINDOWS_TARGET_TRANSFER_KB=$TARGET_TRANSFER_KB
 
 if [[ $UNAME_PROCESSOR == ppc64le ]]; then
     PAGE_SIZE_KB=64
+    MAX_SIZE_KB=64
+fi
+
+
+if [[ $UNAME_PROCESSOR == loongarch64 ]]; then
+    PAGE_SIZE_KB=16
     MAX_SIZE_KB=64
 fi
 
