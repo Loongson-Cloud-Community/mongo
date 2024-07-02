@@ -79,6 +79,10 @@
 #  define GNUC_COMPATIBLE
 #endif
 
+#ifdef __loongarch64
+#  define GNUC_COMPATIBLE
+#endif
+
 // The default implementation tactic for gcc/clang is to use the newer
 // __atomic intrinsics added for use in C++11 <atomic>.  Where that
 // isn't available, we use GCC's older __sync functions instead.
