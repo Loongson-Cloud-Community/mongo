@@ -11,3 +11,5 @@ fi
 xzcat $TARBALL | tar -xf-
 
 mv firefox-$VERSION mozilla-release
+
+patch -p1 -d mozilla-release < 0001-mozilla-add-loongarch-support.patch
